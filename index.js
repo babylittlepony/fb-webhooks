@@ -6,14 +6,13 @@ import router from "./routes/route.js"
 
 const app = express()
 
-function handleMessage(sender_psid, received_message) {}
+app.set("view engine", "ejs")
 
-function handlePostback(sender_psid, received_postback) {}
-
-function callSendAPI(sender_psid, response) {}
+app.get("/", (req, res) => {
+  res.render("main/homepage")
+})
 
 app.use(express.json())
-
 app.use(router)
 
 app.listen(3000, () => {
